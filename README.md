@@ -25,16 +25,16 @@
 ## Project Description
  > Your project description should summarize the project you are proposing. Be sure to include:
  > ## Why is it important or interesting to you?
- > * We are interested in creating a very simple interface for users to merge their Spotify playlist and their friend’s playlists together. This will help us gain an understanding of how APIs work and potentially help us in the future. 
+ > * We are interested in creating a very simple interface for users to merge their songs playlists and their friend’s playlists together. This will help us gain an understanding of how GUIs work and potentially help us in the future when creating small softwares. 
  > ## What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- > * We plan to utilize C++ for our language and use Spotify’s API to make our merged playlist. We plan on using the terminal as our way of interacting with the features.
+ > * We plan to utilize C++ for our language and use a GUI library to make our merged playlist. We plan on using the terminal as our way of interacting with the features at first and then potentially create a friendly user interface for the user to use. We will have a menu that will pop up that has all the buttons needed.
 
  >   * [toolname](link) - Short description
  > ## What will be the input/output of your project? What are the features that the project provides?
- > * The input in our project will be two spotify playlists links and the output will contain one playlist of merged songs that are in both playlists 
+ > * The input in our project will be two playlists textfiles and the output will contain one playlist of merged songs that are in both playlists 
 The features that the project provides include:
- >  * Able to save playlists directly to spotify
- >  * Login to spotify
+ >  * Able to select files through navigating through windows explorer/Finder
+ >  * select between merge of Artists or Songs
 
  > 
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
