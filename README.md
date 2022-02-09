@@ -34,7 +34,10 @@
  > * The input in our project will be two playlists textfiles and the output will contain one playlist of merged songs that are in both playlists 
 The features that the project provides include:
  >  * Able to select files through navigating through windows explorer/Finder
- >  * select between merge of Artists or Songs
+ >  * the 2 text files with the list of songs/author will be the input
+ >  * select between merge of Artists or Songs or both
+ >  * the output will be 1 text file similar to the format of the first 2 playlists
+ >  * quit button to exit the program.
 
  > 
  > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
@@ -54,6 +57,8 @@ The features that the project provides include:
 
 ## Class Diagram
  > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+
+
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with a reader (using Calendly). Your entire team must be present. This meeting will occur on week 8 but NOT during lab time.
