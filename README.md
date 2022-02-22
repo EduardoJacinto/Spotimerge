@@ -1,16 +1,8 @@
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Mergify\>
- > Your author list below should include links to all members GitHub (remove existing author).
- 
- > Authors: \<[Ailan Hernandez](https://github.com/zeldran04)\>
- >  \<[Krystal Pothilat](https://github.com/krystalpothilat)\>
- >  \<[Amy Zheng](https://github.com/zamyy78)\>
- >  \<[Eduardo Jacinto](https://github.com/EduardoJacinto)\>
- 
- > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list, start thinking about the features you will implement, what design patterns can help you implement them, and why. If you want to propose your own original idea, you will have to contact an instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). Your project needs to implement at least one design pattern iteratively, which you will have to justify in later phases.The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings. While Daily Scrums are not required we highly encourage you to practice them.
-
+# Mergify
+ > Authors: [Ailan Hernandez](https://github.com/zeldran04),
+ >  [Krystal Pothilat](https://github.com/krystalpothilat),
+ >  [Amy Zheng](https://github.com/zamyy78),
+ >  [Eduardo Jacinto](https://github.com/EduardoJacinto)
  
  > ## Expectations
  > * Incorporate **at least one** design pattern
@@ -23,46 +15,27 @@
 
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
  > ## Why is it important or interesting to you?
- > * We are interested in creating a very simple interface for users to merge their songs playlists and their friend’s playlists together. This will help us gain an understanding of how GUIs work and potentially help us in the future when creating small softwares. 
+ > We are interested in creating a very simple interface for users to merge their songs playlists and their friend’s playlists together. This will help us gain an understanding of how GUIs work and potentially help us in the future when creating small softwares. 
  > ## What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- > * We plan to utilize C++ for our language and use a GUI library to make our merged playlist. We plan on using the terminal as our way of interacting with the features at first and then potentially create a friendly user interface for the user to use. We will have a menu that will pop up that has all the buttons needed.
+ > We plan to utilize C++ for our language and use a GUI library to make our merged playlist. We plan on using the terminal as our way of interacting with the features at first and then potentially create a friendly user interface for the user to use. We will have a menu that will pop up that has all the buttons needed.
 
- >   * [toolname](link) - Short description
  > ## What will be the input/output of your project? What are the features that the project provides?
- > * The input in our project will be two playlists textfiles and the output will contain one playlist of merged songs that are in both playlists 
-The features that the project provides include:
+ > The input in our project will be two playlists textfiles and the output will contain one playlist of merged songs that are in both playlists. 
+ > The features that the project provides include:
  >  * Able to select files through navigating through windows explorer/Finder
  >  * the 2 text files with the list of songs/author will be the input
  >  * select between merge of Artists or Songs or both
  >  * the output will be 1 text file similar to the format of the first 2 playlists
  >  * quit button to exit the program.
 
- > 
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board by choosing the  “Automated kanban with review” option on Github. You should also have a Backlog and In testing columns added.
  > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to:
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller actionable development tasks as issues and assign them to team members. Place these in the `TODO` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
- > * Schedule two check-ins using Calendly. You need to pick both time slots during your lab on week 8. Your entire team must be present for both check-ins.
- >   * The first check-in needs to be scheduled with your lab TA. During that meeting, you will discuss your project design/class diagram from phase II.
- >   * The second check-in should be scheduled with a reader. During that meeting you will discuss:
- >     * The tasks you are planning for the first sprint
- >     * How work will be divided between the team members
 
 ## Class Diagram
 ![classdiagram](https://user-images.githubusercontent.com/60728498/153130879-4bfc81f4-2476-4c33-ab30-21aadcb0faf9.PNG)
 
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+> We essentially have a menu class. This class wil be responsible for executing most of our commands that will branch off into other classes. In the Menu Class, we start with 3 buttons. 1 button is responsible for playlist 1 and the other is for playlist 2. We have an exit quit button that will quit the program after being clicked. When you press each of the playlist buttons, you will prompted with a popup window explorer/finder window which will let you select the playlist. This function will be in the ImportListPopUp class and we will whitelist the files types you can select such as .txt or .text. After the files have been selected and imported, we have a Playlist class that will print and read through the list within the text file. This Playlist Class will be responsible for importing the data into a Vector called SongList and number of songs. Within this class we plan on having a function that will split each element in half, from song title (getTitle) and song author (getAuthor). We will then import the titles and songs into a corresponding vector, authorList[] and SongList[]. Our SongPlaylist Merger Class will be responsible for acquiring the two vector playlist and merging them together with the similar songs and authors. If it failed to merge, we will run a a few tests that will print out failed. The PlaylistMaker class is responsible for making a new text file which will take the similarSongs Vector from the SongPlaylistMerger class and give a prompt on where to save the file. After the 2 buttons in the menu will restore their default stage and the user can quit the program after.
 
-We essentially have a menu class. This class wil be responsible for executing most of our commands that will branch off into other classes. In the Menu Class, we start with 3 buttons. 1 button is responsible for playlist 1 and the other is for playlist 2. We have an exit quit button that will quit the program after being clicked. When you press each of the playlist buttons, you will prompted with a popup window explorer/finder window which will let you select the playlist. This function will be in the ImportListPopUp class and we will whitelist the files types you can select such as .txt or .text. After the files have been selected and imported, we have a Playlist class that will print and read through the list within the text file. This Playlist Class will be responsible for importing the data into a Vector called SongList and number of songs. Within this class we plan on having a function that will split each element in half, from song title (getTitle) and song author (getAuthor). We will then import the titles and songs into a corresponding vector, authorList[] and SongList[]. Our SongPlaylist Merger Class will be responsible for acquiring the two vector playlist and merging them together with the similar songs and authors. If it failed to merge, we will run a a few tests that will print out failed. The PlaylistMaker class is responsible for making a new text file which will take the similarSongs Vector from the SongPlaylistMerger class and give a prompt on where to save the file. After the 2 buttons in the menu will restore their default stage and the user can quit the program after.
- 
- > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with a reader (using Calendly). Your entire team must be present. This meeting will occur on week 8 but NOT during lab time.
  > * Before the meeting you should perform a sprint plan like you did in Phase II.
  > * You should also update this README file by adding the following:
