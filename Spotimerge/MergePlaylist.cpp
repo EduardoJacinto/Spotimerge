@@ -6,15 +6,15 @@
 #include <QVector>
 #include <QString>
 
-void MergePlaylist::findCommonSongs(QVector<QString> lines, QVector<QString> lines2, QVector<QString> lines3) {
+QVector<QString> MergePlaylist::findCommonSongs(QVector<QString> lines12, QVector<QString> lines22, QVector<QString> lines34) {
 	//vector<string> mergedSongs;
         //vector<string> commonSongs;
 	MainWindow obj;
-	lines3.clear();
-    for(int i = 0; i < lines.size(); ++i) {
-        for(int j = 0; j < lines2.size(); ++j) {
-            if(lines.at(i) == lines2.at(j)) {
-                lines3.append(lines.at(i));
+    lines34.clear();
+    for(int i = 0; i < lines12.size(); ++i) {
+        for(int j = 0; j < lines22.size(); ++j) {
+            if(lines12.at(i) == lines22.at(j)) {
+                lines34.append(lines12.at(i));
            }
         }
     }
@@ -37,7 +37,7 @@ void MergePlaylist::findCommonSongs(QVector<QString> lines, QVector<QString> lin
         //	commonSongs.push_back(mergedSongs.at(i));
         //}
 
-
+return lines34;
 	
 }
 
