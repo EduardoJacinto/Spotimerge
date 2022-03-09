@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class MergePlaylist {
+class MergePlaylist : public MainWindow {
 	private:
 		vector<string> playlist1;
 		vector<string> playlist2;
