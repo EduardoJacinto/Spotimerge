@@ -7,6 +7,8 @@
 #include <iostream>
 #include <QDebug>
 
+#include "MergePlaylist.hpp"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -172,16 +174,17 @@ void MainWindow::on_quitButton_clicked()
 
 void MainWindow::on_MergeButton_clicked()
 {
-    lines3.clear();
-    for(int i = 0; i < lines.size(); ++i) {
-        for(int j = 0; j < lines2.size(); ++j) {
-            if(lines.at(i) == lines2.at(j)) {
-                lines3.append(lines.at(i));
-           }
-        }
-   }
+ //   lines3.clear();
+ //   for(int i = 0; i < lines.size(); ++i) {
+ //       for(int j = 0; j < lines2.size(); ++j) {
+ //           if(lines.at(i) == lines2.at(j)) {
+ //               lines3.append(lines.at(i));
+ //          }
+ //       }
+ 	MergePlaylist playlist;
+//   }
 //    qDebug() << lines << lines2;
-       qDebug() << lines3;
+       qDebug() << playlist.findCommonSongs(lines, lines2, lines3);
 
 }
 

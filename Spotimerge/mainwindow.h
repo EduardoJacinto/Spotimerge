@@ -8,6 +8,10 @@
 #include <QMessageBox>
 #include <QPrinter>
 #include <QPrintDialog>
+
+#include "MergePlaylist.hpp"
+
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -22,6 +26,8 @@ public:
     QVector<QString> lines;
     QVector<QString> lines2;
     QVector<QString> lines3;
+
+
 
 
 private slots:
