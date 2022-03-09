@@ -19,6 +19,12 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QVector<QString> lines;
+    QVector<QString> lines2;
+    QVector<QString> lines3;
+    QString mergeText;
+    QString mergeSaveText;
+
 
 private slots:
     void on_actionNew_triggered();
@@ -26,6 +32,8 @@ private slots:
     void on_actionOpen_triggered();
 
     void on_actionSave_as_triggered();
+
+    void on_actionSave_as_triggered(QString text); //design pattern?
 
     void on_actionPaste_triggered();
 
@@ -46,6 +54,10 @@ private slots:
     void on_playlist2Button_clicked();
 
     void on_quitButton_clicked();
+
+    void on_MergeButton_clicked();
+
+    void on_saveMerge_clicked();
 
 private:
     Ui::MainWindow *ui;

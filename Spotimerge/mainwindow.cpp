@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "vector.h"
 #include <string>
 #include <vector>
 #include <QVector>
@@ -46,8 +45,22 @@ void MainWindow::on_actionOpen_triggered()
         file.close();
 }
 
-
-void MainWindow::on_actionSave_as_triggered()
+void MainWindow::on_actionSave_as_triggered(){
+    QString fileName = QFileDialog::getSaveFileName(this,"Save as");
+        QFile file(fileName);
+        if(!file.open(QFile::WriteOnly | QFile::Text)){
+            QMessageBox::warning(this,"Warning", "Cannot save file: " + file.errorString());
+            return;
+        }
+        currentFile = fileName;
+        setWindowTitle(fileName);
+        QTextStream out(&file);
+        QString text = ui->textEdit->toPlainText();
+        QString text2 = ui->textEdit2->toPlainText();
+        out << text << "\n" <<text2;
+        file.close();
+}
+void MainWindow::on_actionSave_as_triggered(QString text)
 {
     QString fileName = QFileDialog::getSaveFileName(this,"Save as");
     QFile file(fileName);
@@ -58,7 +71,6 @@ void MainWindow::on_actionSave_as_triggered()
     currentFile = fileName;
     setWindowTitle(fileName);
     QTextStream out(&file);
-    QString text = ui->textEdit->toPlainText();
     out << text;
     file.close();
 }
@@ -127,16 +139,15 @@ void MainWindow::on_playlist1Button_clicked()
         QTextStream in(&file);
         QString text = in.readAll();
         //ui->textEdit->setText(vec1);
-        QString text1 = text;
             QTextStream * stream = new QTextStream(&text , QIODevice::ReadOnly);
-          QVector<QString > lines;
+          //QVector<QString > lines;
             while (!stream->atEnd())
             {
                lines << stream->readLine();
             }
         ui->textEdit->setText(text);
         qDebug() << lines;
-        file.close();
+        file.close();      
 }
 
 
@@ -153,7 +164,15 @@ void MainWindow::on_playlist2Button_clicked()
        setWindowTitle(fileName);
        QTextStream in(&file);
        QString text = in.readAll();
-       ui->textEdit->setText(text);
+       QTextStream * stream = new QTextStream(&text , QIODevice::ReadOnly);
+
+       while (!stream->atEnd())
+       {
+         lines2 << stream->readLine();
+      }
+   ui->textEdit2->setText(text);
+        qDebug() << lines2;
+       ui->textEdit2->setText(text);
        file.close();
 }
 
@@ -161,5 +180,32 @@ void MainWindow::on_playlist2Button_clicked()
 void MainWindow::on_quitButton_clicked()
 {
     QApplication::quit();
+}
+
+
+void MainWindow::on_MergeButton_clicked()
+{
+    lines3.clear();
+    for(int i = 0; i < lines.size(); ++i) {
+        for(int j = 0; j < lines2.size(); ++j) {
+            if(lines.at(i) == lines2.at(j)) {
+                lines3.append(lines.at(i));
+
+           }
+        }
+   }
+     //  qDebug() << lines3;
+       for(int i = 0; i < lines3.size(); ++i){
+            mergeText = lines3.at(i);
+            ui->textEdit3->append(mergeText);
+        }
+       mergeSaveText = ui->textEdit3->toPlainText();
+       qDebug() << "Save test" << mergeSaveText;
+}
+
+
+void MainWindow::on_saveMerge_clicked()
+{
+         MainWindow::on_actionSave_as_triggered(mergeSaveText);
 }
 
