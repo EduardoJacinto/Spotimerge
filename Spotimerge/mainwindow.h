@@ -33,7 +33,7 @@ private slots:
 
     void on_actionSave_as_triggered();
 
-    void on_actionSave_as_triggered(QString text);
+    void on_actionSave_as_triggered(QString text); //design pattern?
 
     void on_actionPaste_triggered();
 
