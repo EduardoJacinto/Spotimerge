@@ -4,6 +4,11 @@ void MergePlaylist::findCommonSongs() {
 	vector<string> mergedSongs;
         vector<string> commonSongs;
 
+	
+	on_playlist1Button_clicked();
+	on_playlist2Button_clicked();
+
+
         for (int i = 0; i < playlist1.size(); ++i) {
         	 mergedSongs.push_back(playlist1.at(i));
         }
