@@ -7,6 +7,8 @@
 #include <iostream>
 #include <QDebug>
 
+#include "MergePlaylist.hpp"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -185,27 +187,38 @@ void MainWindow::on_quitButton_clicked()
 
 void MainWindow::on_MergeButton_clicked()
 {
-    lines3.clear();
-    for(int i = 0; i < lines.size(); ++i) {
-        for(int j = 0; j < lines2.size(); ++j) {
-            if(lines.at(i) == lines2.at(j)) {
-                lines3.append(lines.at(i));
+    QVector <QString> lines4;
+        lines4.clear();
+         ui->textEdit3->clear();
+     //   for(int i = 0; i < lines.size(); ++i) {
+     //       for(int j = 0; j < lines2.size(); ++j) {
+     //           if(lines.at(i) == lines2.at(j)) {
+     //               lines3.append(lines.at(i));
+     //          }
+     //       }
+        MergePlaylist playlist;
+    //   }
+    //    qDebug() << lines << lines2;
+           qDebug() << playlist.findCommonSongs(lines, lines2, lines3);
+           lines4 = playlist.findCommonSongs(lines, lines2, lines3);
 
-           }
-        }
-   }
-     //  qDebug() << lines3;
-       for(int i = 0; i < lines3.size(); ++i){
-            mergeText = lines3.at(i);
-            ui->textEdit3->append(mergeText);
-        }
-       mergeSaveText = ui->textEdit3->toPlainText();
-       qDebug() << "Save test" << mergeSaveText;
+
+           //qDebug() << lines4;
+           for(int i = 0; i < lines4.size(); ++i){
+                mergeText = lines4.at(i);
+                ui->textEdit3->append(mergeText);
+            }
+           mergeSaveText = ui->textEdit3->toPlainText();
+           qDebug() << "Save test" << mergeSaveText;
+           lines4.clear();
+           qDebug() << lines4;
 }
 
 
 void MainWindow::on_saveMerge_clicked()
 {
          MainWindow::on_actionSave_as_triggered(mergeSaveText);
+
+
 }
 
