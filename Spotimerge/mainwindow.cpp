@@ -45,8 +45,22 @@ void MainWindow::on_actionOpen_triggered()
         file.close();
 }
 
-
-void MainWindow::on_actionSave_as_triggered()
+void MainWindow::on_actionSave_as_triggered(){
+    QString fileName = QFileDialog::getSaveFileName(this,"Save as");
+        QFile file(fileName);
+        if(!file.open(QFile::WriteOnly | QFile::Text)){
+            QMessageBox::warning(this,"Warning", "Cannot save file: " + file.errorString());
+            return;
+        }
+        currentFile = fileName;
+        setWindowTitle(fileName);
+        QTextStream out(&file);
+        QString text = ui->textEdit->toPlainText();
+        QString text2 = ui->textEdit2->toPlainText();
+        out << text << "\n" <<text2;
+        file.close();
+}
+void MainWindow::on_actionSave_as_triggered(QString text)
 {
     QString fileName = QFileDialog::getSaveFileName(this,"Save as");
     QFile file(fileName);
@@ -57,7 +71,6 @@ void MainWindow::on_actionSave_as_triggered()
     currentFile = fileName;
     setWindowTitle(fileName);
     QTextStream out(&file);
-    QString text = ui->textEdit->toPlainText();
     out << text;
     file.close();
 }
@@ -177,11 +190,22 @@ void MainWindow::on_MergeButton_clicked()
         for(int j = 0; j < lines2.size(); ++j) {
             if(lines.at(i) == lines2.at(j)) {
                 lines3.append(lines.at(i));
+
            }
         }
    }
-//    qDebug() << lines << lines2;
-       qDebug() << lines3;
+     //  qDebug() << lines3;
+       for(int i = 0; i < lines3.size(); ++i){
+            mergeText = lines3.at(i);
+            ui->textEdit3->append(mergeText);
+        }
+       mergeSaveText = ui->textEdit3->toPlainText();
+       qDebug() << "Save test" << mergeSaveText;
+}
 
+
+void MainWindow::on_saveMerge_clicked()
+{
+         MainWindow::on_actionSave_as_triggered(mergeSaveText);
 }
 

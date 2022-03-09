@@ -22,6 +22,8 @@ public:
     QVector<QString> lines;
     QVector<QString> lines2;
     QVector<QString> lines3;
+    QString mergeText;
+    QString mergeSaveText;
 
 
 private slots:
@@ -30,6 +32,8 @@ private slots:
     void on_actionOpen_triggered();
 
     void on_actionSave_as_triggered();
+
+    void on_actionSave_as_triggered(QString text);
 
     void on_actionPaste_triggered();
 
@@ -52,6 +56,8 @@ private slots:
     void on_quitButton_clicked();
 
     void on_MergeButton_clicked();
+
+    void on_saveMerge_clicked();
 
 private:
     Ui::MainWindow *ui;
