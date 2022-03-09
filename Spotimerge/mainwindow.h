@@ -19,6 +19,10 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QVector<QString> lines;
+    QVector<QString> lines2;
+    QVector<QString> lines3;
+
 
 private slots:
     void on_actionNew_triggered();
@@ -46,6 +50,10 @@ private slots:
     void on_playlist2Button_clicked();
 
     void on_quitButton_clicked();
+
+
+
+    void on_MergeButton_clicked();
 
 private:
     Ui::MainWindow *ui;

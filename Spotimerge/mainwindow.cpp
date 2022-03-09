@@ -127,16 +127,16 @@ void MainWindow::on_playlist1Button_clicked()
         QTextStream in(&file);
         QString text = in.readAll();
         //ui->textEdit->setText(vec1);
-        QString text1 = text;
             QTextStream * stream = new QTextStream(&text , QIODevice::ReadOnly);
-          QVector<QString > lines;
+          //QVector<QString > lines;
             while (!stream->atEnd())
             {
                lines << stream->readLine();
             }
         ui->textEdit->setText(text);
+       // lines.append("Family Ties- Baby Keem");
         qDebug() << lines;
-        file.close();
+        file.close();      
 }
 
 
@@ -153,6 +153,15 @@ void MainWindow::on_playlist2Button_clicked()
        setWindowTitle(fileName);
        QTextStream in(&file);
        QString text = in.readAll();
+       //QTextStream * stream = new QTextStream(&text , QIODevice::ReadOnly);
+     //QVector<QString > lines;
+       //while (!stream->atEnd())
+       //{
+         // lines2 << stream->readLine();
+      // }
+   ui->textEdit->setText(text);
+  // lines.append("Family Ties- Baby Keem");
+   //qDebug() << lines2;
        ui->textEdit->setText(text);
        file.close();
 }
@@ -161,5 +170,21 @@ void MainWindow::on_playlist2Button_clicked()
 void MainWindow::on_quitButton_clicked()
 {
     QApplication::quit();
+}
+
+
+
+
+
+void MainWindow::on_MergeButton_clicked()
+{
+    //for(int i = 0; i < lines.size(); ++i) {
+        //for(int j = 0; j < lines2.size(); ++j) {
+           // if(lines.at(i) == lines2.at(j)) {
+                //lines3.append(lines.at(i));
+          //  }
+       // }
+  //  }
+    qDebug() << lines;
 }
 
