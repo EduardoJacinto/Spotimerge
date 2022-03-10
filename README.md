@@ -3,16 +3,6 @@
  >  [Krystal Pothilat](https://github.com/krystalpothilat),
  >  [Amy Zheng](https://github.com/zamyy78),
  >  [Eduardo Jacinto](https://github.com/EduardoJacinto)
- 
- > ## Expectations
- > * Incorporate **at least one** design pattern
- >   * It is recommended that you include a design pattern that we will teach this session (Composite, Strategy, or Visitor)
- > * Your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
- > * Each member of the group must actively participate in the Github Project board and reviewing commited code.
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two scrum/check-in meetings with your lab TA/reader in two different weeks in addition to the final demo.
-
 
 ## Project Description
  > ## Why is it important or interesting to you?
@@ -41,16 +31,21 @@
 
  
  > ## Final deliverable
- > All group members will give a demo to the TA/reader during lab time. The TA/reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > <img src = "https://user-images.githubusercontent.com/60487909/157627023-5b6ed906-2dd8-4feb-9f9f-eded1267f173.png"  width  = "400" height  =  "350" >
+ > <img src =  "https://user-images.githubusercontent.com/60487909/157627119-4e1f1fa7-74e0-4a5b-bea1-a4b01ff2ec4f.png"  width = "400" height = "350" >
+ > <img src = "https://user-images.githubusercontent.com/60487909/157627132-b0a2d45d-ed48-4440-afd3-24616a04ba3a.png"  width = "600" height = "350" >
+
+ 
  ## Installation/Usage
- > Instructions on installing and running your application
+ > The application requires QT Creator to run. 
+ > 1. Click the download dropdown to download the files. 
+ > 2. Open QT Creator and import the project. 
+ > 3. Go to Build-> Run on QT Creator to run the application. 
+
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > The project was tested by user interactions to test if the UI worked and by unit testing with Google Test to verify that the functions of a class worked as expected.
+
+
  
