@@ -45,7 +45,7 @@
  > 3. Go to Build-> Run on QT Creator to run the application. 
 
  ## Testing
- > The project was tested by user interactions to test if the UI worked and by unit testing with Google Test to verify that the functions of a class worked as expected.
+ > The project was tested by user interactions to test if the UI worked and by unit testing with Google Test to verify that the functions of a class worked as expected. The Google Tests tested our mergePlaylist function and all the tests passed with no memory leaks on Valgrind.
 
 
  
