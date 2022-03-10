@@ -14,10 +14,11 @@
  > The input in our project will be two playlists textfiles and the output will contain one playlist of merged songs that are in both playlists. 
  > The features that the project provides include:
  >  * Able to select files through navigating through windows explorer/Finder
- >  * the 2 text files with the list of songs/author will be the input
- >  * select between merge of Artists or Songs or both
+ >  * the 2 text files with the list of songs and their corresponding author will be the input
  >  * the output will be 1 text file similar to the format of the first 2 playlists
- >  * quit button to exit the program.
+ >  * ability to save the merged playlist as a new text file ("Save as" button)
+ >  * undo, redo, copy, and paste buttons to quickly make changes to the text files
+ >  * quit button to exit the program
 
  > ## Phase II
 
