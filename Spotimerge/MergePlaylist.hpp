@@ -5,22 +5,18 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include <QVector>
+#include <QString>
+
+#include "mainwindow.h"
 
 using namespace std;
 
-class MergePlaylist : public MainWindow {
+class MergePlaylist {
 	private:
-		vector<string> playlist1;
-		vector<string> playlist2;
-		vector<string> commonSongsList;
+
 	public:
-		virtual void print() = 0;
-		
-		void findCommonSongs();
-		
-		
-
-
+		QVector<QString> findCommonSongs(QVector<QString>, QVector<QString>, QVector<QString>);
 };
 
 #endif //_MERGE_PLAYLIST_HPP
