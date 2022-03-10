@@ -8,6 +8,7 @@
 #include <QDebug>
 
 #include "MergePlaylist.hpp"
+#include "playlistmaker.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -204,14 +205,17 @@ void MainWindow::on_MergeButton_clicked()
 
 
            //qDebug() << lines4;
-           for(int i = 0; i < lines4.size(); ++i){
-                mergeText = lines4.at(i);
-                ui->textEdit3->append(mergeText);
-            }
-           mergeSaveText = ui->textEdit3->toPlainText();
-           qDebug() << "Save test" << mergeSaveText;
+           //for(int i = 0; i < lines4.size(); ++i){
+               // mergeText = lines4.at(i);
+               // ui->textEdit3->append(mergeText);
+           // }
+           //mergeSaveText = ui->textEdit3->toPlainText();
+           PlaylistMaker playlist2;
+           //qDebug() << "Save test" << playlist2.PlaylistMake(lines4,mergeText, mergeSaveText,ui);
+           mergeSaveText = playlist2.PlaylistMake(lines4,mergeText, mergeSaveText,ui);
+          // qDebug() << "Save test" << mergeSaveText;
            lines4.clear();
-           qDebug() << lines4;
+           //qDebug() << lines4;
 }
 
 
