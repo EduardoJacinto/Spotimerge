@@ -65,6 +65,14 @@ private slots:
 
     void on_saveMerge_clicked();
 
+    void on_RedoButton_clicked();
+
+    void on_UndoButton_clicked();
+
+    void on_CopyButton_clicked();
+
+    void on_PasteButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile = "";

@@ -37,20 +37,7 @@
 > We essentially have a menu class. This class wil be responsible for executing most of our commands that will branch off into other classes. In the Menu Class, we start with 3 buttons. 1 button is responsible for playlist 1 and the other is for playlist 2. We have an exit quit button that will quit the program after being clicked. When you press each of the playlist buttons, you will prompted with a popup window explorer/finder window which will let you select the playlist. This function will be in the ImportListPopUp class and we will whitelist the files types you can select such as .txt or .text. After the files have been selected and imported, we have a Playlist class that will print and read through the list within the text file. This Playlist Class will be responsible for importing the data into a Vector called SongList and number of songs. Within this class we plan on having a function that will split each element in half, from song title (getTitle) and song author (getAuthor). We will then import the titles and songs into a corresponding vector, authorList[] and SongList[]. Our SongPlaylist Merger Class will be responsible for acquiring the two vector playlist and merging them together with the similar songs and authors. If it failed to merge, we will run a a few tests that will print out failed. The PlaylistMaker class is responsible for making a new text file which will take the similarSongs Vector from the SongPlaylistMerger class and give a prompt on where to save the file. After the 2 buttons in the menu will restore their default stage and the user can quit the program after.
 
 > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with a reader (using Calendly). Your entire team must be present. This meeting will occur on week 8 but NOT during lab time.
- > * Before the meeting you should perform a sprint plan like you did in Phase II.
- > * You should also update this README file by adding the following:
- >   * What design pattern(s) did you use? For each pattern you must explain in 4-5 sentences:
- >     * Why did you pick this pattern? And what feature did you implement with it?
- >     * How did the design pattern help you write better code?
- >   * An updated class diagram that reflects the design pattern(s) you used. You may combine multiple design patterns into one diagram if you'd like, but it needs to be clear which portion of the diagram represents which design pattern (either in the diagram or in the description).
- >   * Make sure your README file (and Project board) are up-to-date reflecting the current status of your project. Previous versions of the README file should still be visible through your commit history.
-> 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
+ > The design pattern that we chose to implement is the composite pattern. We chose this pattern because it prevents us from writing the same code for different objects and makes adding components simple. We may decide to add more components later and the composite pattern allows us to make these additions easily. The feature we implemented using this pattern was for the playlist. The design pattern helps us write better code because it allows us to minimize the amount of repetitive code, resulting in more clear and concise code. Another feature that we implemented using a composite pattern was when creating the opening and saving of a .txt file. Since they are basically the same function with just one difference of reading and writing we used a composite pattern. We also did this by including a .txt file to playlist1 and playlist2 just into different vectors. 
 
  
  > ## Final deliverable

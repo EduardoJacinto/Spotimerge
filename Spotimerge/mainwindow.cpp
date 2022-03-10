@@ -6,6 +6,10 @@
 #include <fstream>
 #include <iostream>
 #include <QDebug>
+#include "redo.h"
+#include "undo.h"
+#include "copie.h"
+#include "paste.h"
 
 #include "MergePlaylist.hpp"
 #include "playlistmaker.h"
@@ -224,5 +228,32 @@ void MainWindow::on_saveMerge_clicked()
          MainWindow::on_actionSave_as_triggered(mergeSaveText);
 
 
+}
+
+
+void MainWindow::on_RedoButton_clicked()
+{
+    redo redo;
+    redo.buttonAction(ui);
+}
+
+
+void MainWindow::on_UndoButton_clicked()
+{
+    undo undo;
+    undo.buttonAction(ui);
+}
+
+
+void MainWindow::on_CopyButton_clicked()
+{
+    copie copy;
+    copy.buttonAction(ui);
+}
+
+void MainWindow::on_PasteButton_clicked()
+{
+    paste paste;
+    paste.buttonAction(ui);
 }
 
