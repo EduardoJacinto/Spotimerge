@@ -23,7 +23,7 @@
  > ## Phase II
 
 ## Class Diagram
-![image](https://user-images.githubusercontent.com/60728498/157631716-75d53961-7e6e-450b-b359-f02ca2a5df71.png)
+![image](https://user-images.githubusercontent.com/60728498/157633689-664b4f26-5d19-410a-b590-5cf2efca8806.png)
 
 > We essentially have a mainwindow class. This class wil be responsible for executing most of our commands that will branch off into other classes. In the MainWindow Class, we have 5 big buttons. 1 button is responsible for playlist 1 and the other is for playlist 2. We have an exit quit button that will quit the program after being clicked. When you press each of the playlist buttons, you will prompted with a popup window explorer/finder window which will let you select the playlist. This function will will whitelist the files types you can select such as .txt or .text. After the files have been selected and imported, we have a openFile function that will print and read through the list within the text file. This openFile function will be responsible for importing the data into a Vector. We will then import the titles and songs into a corresponding vector. Vectors Lines, Lines2, Lines3 are responisble for storing in all the strings of our songs. Our MergerPlaylist Class will be responsible for acquiring the two vector playlist and merging them together with the similar songs and authors. If it failed to merge, we will run a a few tests that will print out failed. The PlaylistMaker class is responsible for making a new text file once the save button is clicked which will take the similarSongs Vector from the SongPlaylistMerger class and give a prompt on where to save the file. After the 2 buttons in the menu will restore their default stage and the user can quit the program after.
 
