@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     MergePlaylist.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    playlistmaker.cpp
 
 HEADERS += \
     MergePlaylist.hpp \
-    mainwindow.h
+    mainwindow.h \
+    playlistmaker.h
 
 FORMS += \
     mainwindow.ui
