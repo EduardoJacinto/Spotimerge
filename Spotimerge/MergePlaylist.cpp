@@ -1,16 +1,16 @@
 #include "MergePlaylist.hpp"
-#include "mainwindow.h"
-#include <QVector>
-#include <QString>
+#include <vector>
+#include <string>
 
-QVector<QString> MergePlaylist::findCommonSongs(QVector<QString> lines12, QVector<QString> lines22, QVector<QString> lines34) {
+using namespace std;
 
-	MainWindow obj;
+vector<string> MergePlaylist::findCommonSongs(vector<string> lines12, vector<string> lines22, vector<string>& lines34) {
+
     lines34.clear();
     for(int i = 0; i < lines12.size(); ++i) {
         for(int j = 0; j < lines22.size(); ++j) {
             if(lines12.at(i) == lines22.at(j)) {
-                lines34.append(lines12.at(i));
+                lines34.push_back(lines12.at(i));
            }
         }
     }
