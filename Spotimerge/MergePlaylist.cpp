@@ -1,8 +1,5 @@
-
 #include "MergePlaylist.hpp"
-
 #include "mainwindow.h"
-
 #include <QVector>
 #include <QString>
 
@@ -17,7 +14,6 @@ QVector<QString> MergePlaylist::findCommonSongs(QVector<QString> lines12, QVecto
            }
         }
     }
-
 return lines34;
 }
 

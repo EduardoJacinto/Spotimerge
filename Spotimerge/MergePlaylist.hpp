@@ -5,7 +5,6 @@
 #include <string>
 #include <algorithm>
 #include <vector>
-
 #include <QVector>
 #include <QString>
 
@@ -17,13 +16,7 @@ class MergePlaylist {
 	private:
 
 	public:
-//		virtual void print() = 0;
-		
 		QVector<QString> findCommonSongs(QVector<QString>, QVector<QString>, QVector<QString>);
-		
-		
-
-
 };
 
 #endif //_MERGE_PLAYLIST_HPP
