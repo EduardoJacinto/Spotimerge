@@ -8,7 +8,7 @@
 #include <QMessageBox>
 #include <QPrinter>
 #include <QPrintDialog>
-
+#include "importlistpopup.h"
 #include "MergePlaylist.hpp"
 
 
@@ -28,9 +28,10 @@ public:
     QVector<QString> lines3;
     QString mergeText;
     QString mergeSaveText;
-
-
-
+    QString openfiles();
+    QString text;
+    QString currentFile = "";
+    QFile file(QFile);
 
 private slots:
     void on_actionNew_triggered();
@@ -65,8 +66,9 @@ private slots:
 
     void on_saveMerge_clicked();
 
+
 private:
     Ui::MainWindow *ui;
-    QString currentFile = "";
+   // QString currentFile = "";
 };
 #endif // MAINWINDOW_H

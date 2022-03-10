@@ -6,7 +6,6 @@
 #include <fstream>
 #include <iostream>
 #include <QDebug>
-
 #include "MergePlaylist.hpp"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -30,6 +29,20 @@ void MainWindow::on_actionNew_triggered()
     ui->textEdit->setText(QString());
 }
 
+QString MainWindow::openfiles(){
+    QString fileName = QFileDialog::getOpenFileName(this, "Open a file");
+        QFile file(fileName);
+        currentFile = fileName;
+        if(!file.open(QIODevice::ReadOnly | QFile::Text)){
+            QMessageBox::warning(this,"Warning", "Cannot open file: " + file.errorString());
+            return "";
+        }
+        setWindowTitle(fileName);
+        QTextStream in(&file);
+        text = in.readAll();
+        file.close();
+    return text;
+}
 
 void MainWindow::on_actionOpen_triggered()
 {
@@ -127,55 +140,29 @@ void MainWindow::on_actionRedo_triggered()
 
 void MainWindow::on_playlist1Button_clicked()
 {
-
-
-    QString fileName = QFileDialog::getOpenFileName(this, "Open a file");
-        QFile file(fileName);
-        currentFile = fileName;
-        if(!file.open(QIODevice::ReadOnly | QFile::Text)){
-            QMessageBox::warning(this,"Warning", "Cannot open file: " + file.errorString());
-            return;
-        }
-
-        setWindowTitle(fileName);
-        QTextStream in(&file);
-        QString text = in.readAll();
-        //ui->textEdit->setText(vec1);
-            QTextStream * stream = new QTextStream(&text , QIODevice::ReadOnly);
-          //QVector<QString > lines;
+    QString text = openfiles();
+            QTextStream * stream = new QTextStream(&text, QIODevice::ReadOnly);
             while (!stream->atEnd())
             {
                lines << stream->readLine();
             }
         ui->textEdit->setText(text);
         qDebug() << lines;
-        file.close();      
 }
 
 
 
 void MainWindow::on_playlist2Button_clicked()
 {
-    QString fileName = QFileDialog::getOpenFileName(this, "Open a file");
-       QFile file(fileName);
-       currentFile = fileName;
-       if(!file.open(QIODevice::ReadOnly | QFile::Text)){
-           QMessageBox::warning(this,"Warning", "Cannot open file: " + file.errorString());
-           return;
-       }
-       setWindowTitle(fileName);
-       QTextStream in(&file);
-       QString text = in.readAll();
-       QTextStream * stream = new QTextStream(&text , QIODevice::ReadOnly);
+            QString text = openfiles();
+                QTextStream * stream = new QTextStream(&text, QIODevice::ReadOnly);
+                while (!stream->atEnd())
+                {
+                   lines2 << stream->readLine();
+                }
+            ui->textEdit2->setText(text);
+            qDebug() << lines2;
 
-       while (!stream->atEnd())
-       {
-         lines2 << stream->readLine();
-      }
-   ui->textEdit2->setText(text);
-        qDebug() << lines2;
-       ui->textEdit2->setText(text);
-       file.close();
 }
 
 
@@ -190,15 +177,9 @@ void MainWindow::on_MergeButton_clicked()
     QVector <QString> lines4;
         lines4.clear();
          ui->textEdit3->clear();
-     //   for(int i = 0; i < lines.size(); ++i) {
-     //       for(int j = 0; j < lines2.size(); ++j) {
-     //           if(lines.at(i) == lines2.at(j)) {
-     //               lines3.append(lines.at(i));
-     //          }
-     //       }
+
         MergePlaylist playlist;
-    //   }
-    //    qDebug() << lines << lines2;
+
            qDebug() << playlist.findCommonSongs(lines, lines2, lines3);
            lines4 = playlist.findCommonSongs(lines, lines2, lines3);
 
