@@ -44,6 +44,12 @@
  > 1. Click the download dropdown to download the files. 
  > 2. Open QT Creator and import the project. 
  > 3. Go to Build-> Run on QT Creator to run the application. 
+ > 4. Once the GUI is up you click on "Playlist1" button where it will open up file explorer
+ > 5. From here you select the desired txt playlist and click on it. This will show the entire playlist on the left screen.
+ > 6. Repeat the proccess for "Playlist2" button.
+ > 7. Click on Merge and it will show the playlist that contains similar songs in both Playlist1 and Playlist2. 
+ > 8. Click "save as" button to download the new merged playlist into a txt file.
+ > 9. Select Quit to exit application.
 
  ## Testing
  > The project was tested by user interactions to test if the UI worked and by unit testing with Google Test to verify that the functions of a class worked as expected. The Google Tests tested our mergePlaylist function and all the tests passed with no memory leaks on Valgrind.
