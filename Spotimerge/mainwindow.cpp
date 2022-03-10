@@ -216,6 +216,7 @@ void MainWindow::on_MergeButton_clicked()
           // qDebug() << "Save test" << mergeSaveText;
            lines4.clear();
            //qDebug() << lines4;
+
 }
 
 
