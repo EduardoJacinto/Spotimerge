@@ -36,7 +36,7 @@
  ## Screenshots
  > <img src = "https://user-images.githubusercontent.com/60487909/157635598-d5815b2b-86fc-4c1b-8e70-a62280266d84.png" width = "400" height = "300" >
  > <img src = "https://user-images.githubusercontent.com/60487909/157635678-f60f71c2-e5ba-4788-b078-92c163f32959.png" width = "400" height = "300" >
- > <img src = "https://user-images.githubusercontent.com/60487909/157635731-cf0d34a3-8482-4550-a63f-f91e2b28e690.png" width = "600" height = "300" >
+ > <img src = "https://user-images.githubusercontent.com/60487909/157635731-cf0d34a3-8482-4550-a63f-f91e2b28e690.png" width = "400" height = "300" >
  
  ## Installation/Usage
  > The application requires QT Creator to run. 
